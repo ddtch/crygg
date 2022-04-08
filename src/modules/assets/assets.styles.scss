@@ -1,0 +1,48 @@
+@import "../../variables";
+
+.assets-holder{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: baseline;
+  align-content: flex-start;
+
+  .asset-wrapper{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    padding: 10px 30px 10px 10px;
+    background: #626371;
+    border-radius: 6px;
+
+    .asset-avatar{
+      margin-right: 6px;
+      img {
+        width: 32px;
+        height: 32px;
+      }
+    }
+
+    .asset-title-holder{
+      font-weight: 500;
+      > span {
+        font-weight: normal;
+        line-height: 12px;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.assets-page-holder{
+  display: flex;
+  //grid-template-columns: 1.8fr 1.2fr;
+  //grid-gap: 40px;
+}
+.assets-holder{
+  width: 60%;
+}
+.charts-holder{
+  width: 40%;
+}
