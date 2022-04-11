@@ -303,7 +303,8 @@ function App() {
     })
   }
 
-  const handleCardClick = (link: string | undefined) => {
+  const handleCardClick = (link: string | undefined, title: string) => {
+    localStorage.setItem('selectedGame', title);
     if (!link) {
       return;
     }
@@ -322,7 +323,7 @@ function App() {
       <div className="list-holder">
         {
           games.map(el =>
-            <div className="main-card" key={el.id} onClick={() => handleCardClick(el.link)}>
+            <div className="main-card" key={el.id} onClick={() => handleCardClick(el.link, el.title)}>
               <div className="cd-image-holder">
                 <img src={el.image} />
               </div>
