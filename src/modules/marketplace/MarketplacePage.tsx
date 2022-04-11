@@ -10,7 +10,7 @@ import item6 from '../../assets/mkls/06.jpeg';
 
 import icon1 from '../../assets/01-eth.svg';
 
-const mockItems = [
+export const mockItems = [
   {
     id: 'hf9ds',
     src: item1,

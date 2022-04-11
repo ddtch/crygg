@@ -24,6 +24,8 @@ import { Bubble, Line } from 'react-chartjs-2';
 
 //@ts-ignore
 import faker from 'faker';
+import stylesMarketplace from "../marketplace/marketplase.module.scss";
+import {mockItems} from "../marketplace/MarketplacePage";
 
 export const mockAssets = [
   {
@@ -269,9 +271,48 @@ export const AssetsPage = () => {
               </tbody>
             </table>
 
-          </div>
+            <br/>
+            <br/>
+            <h1>NFTs</h1>
+            <div className={stylesAssets.mklsHolder}>
+              {
+                mockItems.map(el =>
+                  <div className={stylesAssets.mklsItem} key={el.id}>
+                    <div className={stylesAssets.imgHolder}>
+                      <img src={el.src} />
+                    </div>
+                    <div className={stylesAssets.meta}>
+                      <div style={{width: '100%', display: 'flex', marginBottom: 4}}>
+                        <span><b>{el.title}</b></span>
+                        <img style={{
+                          display: "flex",
+                          marginLeft: 'auto',
+                          justifySelf: 'flex-end',
+                          width: '16px',
+                          height: '16px',
+                          borderRadius: '100%',
+                          overflow: "hidden",
+                          border: '1px solid #fff',
+                        }}
+                             src={`https://randomuser.me/api/portraits/${(Math.random()>=0.5)? 'men' : 'women'}/${Math.round(Math.random() * 45)}.jpg`}/>
+                      </div>
+                      <span style={{fontSize: '12px'}}>
+                      <img src={icon1} style={{width: 10, height: 10,}}/> {el.price} {el.cur}
+                    </span>
+                      <br/>
+                      <span style={{
+                        color: '#0a59f1', fontWeight: 'bold',
+                        cursor: 'pointer',
+                        fontSize: '12px'}}>place a bid</span>
+                    </div>
+                  </div>
+                )
+              }
+            </div>
 
+          </div>
         </aside>
+
 
 
 
